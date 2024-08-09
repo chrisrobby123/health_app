@@ -13,6 +13,7 @@ import 'package:health_app/features/home/screens/notifications_screen.dart';
 import 'package:health_app/features/home/screens/privacy_policy_screen.dart';
 import 'package:health_app/features/home/screens/settings.dart';
 import 'package:health_app/features/medicals/screens/medical_card_screen.dart';
+import 'package:health_app/features/splash_screen/splash_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -24,6 +25,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const Register(),
       );
+    case SplashScreen.routeName:
+      return MaterialPageRoute(builder: (context) => const SplashScreen());
     case Homescreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const Homescreen(),

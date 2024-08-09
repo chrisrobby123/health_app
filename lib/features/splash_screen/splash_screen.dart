@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:health_app/features/home/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  static const routeName = '/splash';
   const SplashScreen({super.key});
 
   @override

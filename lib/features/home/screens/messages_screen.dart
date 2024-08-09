@@ -29,7 +29,14 @@ class MessagesScreen extends ConsumerWidget {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            const DoctorsList(),
+            const Text(
+              'Doctors are available, Make an Appointment now!',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            // const DoctorsList(),
+            const SizedBox(height: 60),
             const Text(
               'Chats',
               style: TextStyle(
@@ -37,39 +44,46 @@ class MessagesScreen extends ConsumerWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            ref.watch(chatDisplayStreamProvider).when(
-                  data: (data) {
-                    return ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: data.length,
-                        itemBuilder: (ctx, i) {
-                          return Padding(
-                            padding: const EdgeInsets.all(3),
-                            child: ListTile(
-                                leading: const CircleAvatar(
-                                  backgroundImage: NetworkImage(
-                                      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bm8lMjBwcm9maWxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60'),
-                                ),
-                                title: Text(
-                                  data[i].name,
-                                ),
-                                subtitle: Text(
-                                  data[i].lastMessage,
-                                ),
-                                trailing: const Text(
-                                    '13:52') //Text(DateFormat.Hm().format(data[i].timeSent.toString())),
-                                ),
-                          );
-                        });
-                  },
-                  error: (err, sttr) {
-                    return Center(
-                      child: Text(err.toString()),
-                    );
-                  },
-                  loading: () =>
-                      const Center(child: CircularProgressIndicator()),
-                )
+            Text(
+              'No Messages Yet, Do you want to start one?',
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            // ref.watch(chatDisplayStreamProvider).when(
+            //       data: (data) {
+            //         return ListView.builder(
+            //             shrinkWrap: true,
+            //             itemCount: data.length,
+            //             itemBuilder: (ctx, i) {
+            //               return Padding(
+            //                 padding: const EdgeInsets.all(3),
+            //                 child: ListTile(
+            //                     leading: const CircleAvatar(
+            //                       backgroundImage: NetworkImage(
+            //                           'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bm8lMjBwcm9maWxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60'),
+            //                     ),
+            //                     title: Text(
+            //                       data[i].name,
+            //                     ),
+            //                     subtitle: Text(
+            //                       data[i].lastMessage,
+            //                     ),
+            //                     trailing: const Text(
+            //                         '13:52') //Text(DateFormat.Hm().format(data[i].timeSent.toString())),
+            //                     ),
+            //               );
+            //             });
+            //       },
+            //       error: (err, sttr) {
+            //         return Center(
+            //           child: Text(err.toString()),
+            //         );
+            //       },
+            //       loading: () =>
+            //           const Center(child: CircularProgressIndicator()),
+            //     )
 
             // Expanded(
             //   flex: 5,

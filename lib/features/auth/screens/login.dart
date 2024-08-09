@@ -5,6 +5,8 @@ import 'package:health_app/core/commons/custom_textformfield.dart';
 import 'package:health_app/features/auth/controller/auth_controller.dart';
 import 'package:health_app/features/auth/screens/register.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:health_app/features/home/screens/home.dart';
+import 'package:health_app/features/splash_screen/splash_screen.dart';
 
 class LogInScreenn extends ConsumerStatefulWidget {
   const LogInScreenn({super.key});
@@ -21,6 +23,10 @@ class _LogInScreenState extends ConsumerState<LogInScreenn> {
 
   void navigateToRegisterScreen() {
     Navigator.pushReplacementNamed(context, Register.routeName);
+  }
+
+  navigateToHomeScreen() {
+    Navigator.of(context).pushReplacementNamed(SplashScreen.routeName);
   }
 
   void signInWithEmailAndPassword() {
@@ -72,7 +78,7 @@ class _LogInScreenState extends ConsumerState<LogInScreenn> {
               height: 10,
             ),
             CustomElevatedButton(
-              onPressed: signInWithEmailAndPassword,
+              onPressed: navigateToHomeScreen,
               text: isLoading ? 'Signing In, Please wait...' : 'Sign In',
             ),
             const SizedBox(
